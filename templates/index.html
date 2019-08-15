@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Início{% endblock %}
+{% block body %}
+
+    <div class="container box-top">
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto "></div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">Início</li>
+                </ol>
+            </nav>
+    </div>
+
+    <div class="container box-list">
+        <hr>
+        <div class="row">
+            <div class="col-sm ">
+                <ul class="list-unstyled mt-3 mb-4 text-left">
+                    <li><a href="{% url 'lista_usu' %}"><i class="fas fa-address-book font-size-icons"></i> Listar Equipe </a></li>
+                    <li><a href="{% url 'lista_grupo' %}"><i class="fas fa-address-book font-size-icons"></i> Grupos </a></li>
+                    <li><a href="#"><i class="fas fa-address-book font-size-icons"></i> Grupos Usuario</a></li>
+
+                </ul>
+            </div>
+            <div class="col-sm">
+                One of three columns
+            </div>
+            <div class="col-sm">
+                One of three columns
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}
+{% block scripts %}
+    <script>
+    </script>
+{% endblock scripts %}

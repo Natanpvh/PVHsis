@@ -1,0 +1,47 @@
+{% extends 'dashboard/index.html' %}
+{% block title %}Cadastro de Categoria{% endblock %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+    <div class="container-fluid">
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Cadastrar</h1>
+        <p class="mb-4">Cadastra nova Categoria.</p>
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Preencha o formulário</h6>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="form-group col-sm-8 col-md-7">
+                            {{ form.nome|as_crispy_field }}
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <button type="submit" class="btn btn-success small">SALVAR</button>
+                        </div>
+                        <div class="col-md-5">
+                            <a class="btn btn-warning" href="{% url 'category' %}">CANCELAR</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+    </div>
+    <!-- ----------------------------------------------- -->
+
+{% endblock body %}
+{% block scripts %}
+    <script>
+        $("#id_content").addClass("form-control");
+    </script>
+{% endblock scripts %}

@@ -1,0 +1,42 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm fixed-top">
+    <h5 class="my-0 mr-md-auto font-weight-normal"><img src="/static/img/logosis-01.jpg" alt="Smiley face"
+                                                        height="42" width="42"> NM SIS</h5>
+    <div class="my-0 font-weight-normal font-capitalize badge badge-success"><i
+            class="fas fa-user-alt"></i> {{ request.user }}</div>
+    <nav class="my-2 my-md-0 mr-md-3 ">
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'index' %}">Dashboards</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                   aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#">Disabled</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#">Disabled</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link btn btn-danger" href="{% url 'usu_logout' %}"><i class="fas fa-sign-out-alt"></i></a>
+            </li>
+
+        </ul>
+    </nav>
+
+</div>

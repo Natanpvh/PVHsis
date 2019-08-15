@@ -1,0 +1,56 @@
+{% extends 'dashboard/index.html' %}
+{% block title %}Deletar Cadastro de Usuário{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 box-top">
+                &nbsp
+            </div>
+        </div>
+        <!-- /.row -->
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">Deletar Usuário</legend>
+            <hr>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="form-group col-sm-12">
+                                        <label class="form-control-label">Usuario:</label>
+                                        <div class="form-group">
+                                            <div class="alert alert-danger" role="alert">
+                                                {{ usuario.username }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="pk" value="{{ usuario.id }}">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button type="submit" class="btn btn-danger small">Deletar</button>
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="{% url 'lista_usu' %}" class="btn btn-outline-warning">Cancelar</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- ----------------------------------------------- -->
+        </fieldset>
+    </div>
+    <!-- ----------------------------------------------- -->
+{% endblock body %}
+{% block scripts %}
+    <script>
+    </script>
+{% endblock scripts %}

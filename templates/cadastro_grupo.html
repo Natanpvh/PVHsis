@@ -1,0 +1,49 @@
+{% extends 'dashboard/index.html' %}
+{% block title %}Grupos{% endblock %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+    <div class="container-fluid">
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Grupo</h1>
+        <p class="mb-4"> Cadastrar novo Grupo de Usuários do Sistema .</p>
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Cadastrar</h6>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="form-group col-sm-7 col-md-6 {% if form.is_superuser.errors %} has-error{% endif %}">
+                            {{ form.name|as_crispy_field }}
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-7 col-md-6 {% if form.is_superuser.errors %} has-error{% endif %}">
+                            {{ form.permissions|as_crispy_field }}
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success small">SALVAR</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+
+{% endblock body %}
+{% block scripts %}
+    <script>
+        $("#id_password1").addClass("form-control");
+        $("#id_password2").addClass("form-control");
+    </script>
+{% endblock scripts %}

@@ -1,0 +1,92 @@
+{% extends 'dashboard/index.html' %}
+{% block title %}Cadastro de Usuários{% endblock %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Editar</h1>
+        <p class="mb-4"> Edita o cadastro do Usuário .</p>
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Edite as Informações Corretamente</h6>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="form-group col-sm-8 col-md-7">
+                            {{ form.username|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-6 col-md-5">
+                            {{ form.email|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-7 col-md-6">
+                            {{ form.first_name|as_crispy_field }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-7 col-md-6">
+                            {{ form.last_name|as_crispy_field }}
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                        <div class="form-group col-sm-12 col-md-11">
+                            {{ form.is_active|as_crispy_field }}
+                        </div>
+                    </div>
+                    <hr>
+                    {% if user.is_staff %}
+                        <div class="row">
+                            <div class="form-group col-sm-12 col-md-11">
+                                {{ form.is_staff|as_crispy_field }}
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-12 col-md-11">
+                                {{ form.groups|as_crispy_field }}
+
+                            </div>
+                        </div>
+                        <hr>
+                    {% endif %}
+
+                    <div class="row">
+                        <div class="form-group col-sm-12 col-md-11">
+                            {{ form.password|as_crispy_field }}
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <button type="submit" class="btn btn-success small">SALVAR</button>
+                        </div>
+                        <div class="col-md-5">
+                            <a class="btn btn-warning" href="{% url 'lista_usu' %}">CANCELAR</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- ----------------------------------------------- -->
+
+{% endblock body %}
+{% block scripts %}
+    <script>
+    </script>
+{% endblock scripts %}

@@ -1,0 +1,118 @@
+{% extends 'dashboard/index.html' %}
+{% block title %}Categorias{% endblock %}
+{% block body %}
+    <div class="container-fluid">
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Categorias</h1>
+        <p class="mb-4"> Cadastro e Administração de Categorias.</p>
+        <p><a href="{% url 'cadastra_category' %}" class="btn btn-primary btn-sm text-margin-bottom"><i
+                class="fas fa-plus"></i> Nova Categoria</a></p>
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary"><span class="badge badge-primary">Total: {{ total }}</span></h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <div class="container box-list">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <div class="alert {{ message.tags }} alert-dismissible fade show text-center"
+                                             role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            {{ message }}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <table class="table table-sm table-hover">
+                            <thead>
+                            <tr>
+                                <th>Titulo</th>
+                                <th>Opções</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for content_category in category %}
+                                <tr>
+                                    <td>{{ content_category.nome }}</td>
+                                    <td>
+                                        <div class="btn-group btn-group-sm">
+                                            <a href="#" data-confirm='Tem certeza que deseja excluir o Usuário selecionado?'
+                                               class="btn btn-primary btn-sm"><i class="far fa-trash-alt"></i></a>
+                                            <a href="#" class="btn btn-primary btn-sm"><i class="far fa-edit"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Modal -->
+                    <div id="modal-usuario-ver" class="modal fade" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel"
+                         data-backdrop="static">
+                        <div class="modal-dialog modal-lg">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}
+{% block scripts %}
+    <script>
+        $(function () {
+            // VER AGENTE
+            $(".ver-usuario").click(function () {
+
+                var btn = $(this);
+                var htmlToPrint = '' +
+                    '<div class="modal-body">' +
+                    '<div class="container">' +
+                    '<div class="spinner-border" role="status">' +
+                    ' <span class="sr-only">Loading...</span>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>';
+
+                $.ajax({
+                    url: btn.attr("data-url"),
+                    type: 'get',
+                    dataType: 'json',
+                    beforeSend: function () {
+                        $("#modal-usuario-ver").modal("show");
+                        $("#modal-usuario-ver .modal-content").html(htmlToPrint);
+                    },
+                    success: function (data) {
+                        $("#modal-usuario-ver .modal-content").html(data.html_usuario)
+                    }
+                });
+            });
+
+            $('a[data-confirm]').click(function (ev) {
+                var href = $(this).attr('href');
+                if (!$('#confirm-delete').length) {
+                    $('body').append('<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header bg-danger text-white"><h5 class="modal-title" id="exampleModalLabel">Excluir Item</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body">Tem certeza que deseja excluir o item selecionado?</div><div class="modal-footer"><button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button><a class="btn btn-danger text-white" id="dataComfirmok" >Apagar</a></div></div></div></div>');
+                }
+                $('#dataComfirmok').attr('href', href);
+                $('#confirm-delete').modal({shown: true});
+                return false;
+            });
+
+        });
+
+
+    </script>
+{% endblock scripts %}
