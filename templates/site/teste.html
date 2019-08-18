@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Title -->
+  <title>NO SEGUNDO</title>
+
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../../favicon.ico">
+
+ 
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/ico-fontes/all.css">
+ 
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <div id="conteudoArea"></div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function(){   
+    
+    $.ajax({
+     
+     type : "GET",
+     dataType : "jsonp",
+     url : "https://api.hgbrasil.com/weather?woeid=455827",   
+     success: function(data){
+
+     }
+});
+});
+</script>
+   
+</body>
+</html>

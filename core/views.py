@@ -15,10 +15,10 @@ from django.urls import reverse
 from core.forms import RegisterUsuarioForm, EditUsuarioForm, RegisterGroup, EditGroup, EditPasswordForm
 
 
-#@login_required
+@login_required
 def listar_usuario(request):
     """ Lista Usuarios Cadastrados"""
-    template = 'usuarios.html'
+    template = 'user/usuarios.html'
     if request.user.is_staff:
         usuario_sis = User.objects.all()
     else:
@@ -30,23 +30,26 @@ def listar_usuario(request):
     return render(request, template, context)
 
 
-#@login_required
+@login_required
 def ver_usuario(request, pk):
     """ Visualiza as descrições do Usuário"""
     usuario = get_object_or_404(User, pk=pk)
+
     data = dict()
     if request.method == "GET":
         context = {
             "usuario": usuario
         }
+
         data['html_usuario'] = render_to_string('ver_usuario.html', context, request=request)
+
     return JsonResponse(data)
 
 
-#@login_required
+@login_required
 def cadastro_usuario(request):
     """ Cadastra o Usuario"""
-    template_name = 'cadastro_usuario.html'
+    template_name = 'user/cadastro_usuario.html'
     if request.method == 'POST':
         form = RegisterUsuarioForm(request.POST or None)
         if form.is_valid():
@@ -62,10 +65,10 @@ def cadastro_usuario(request):
     return render(request, template_name, context)
 
 
-#@login_required
+@login_required
 def atualiza_usuario(request, pk):
     """ Edida o Usuario"""
-    template_name = 'cadastro__edit_usuario.html'
+    template_name = 'user/cadastro__edit_usuario.html'
     usuario = get_object_or_404(User, pk=pk)
 
     if request.method == 'POST':
@@ -73,7 +76,7 @@ def atualiza_usuario(request, pk):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            messages.success(request, 'Cadastrado de {} foi atualizado com Sucesso!'.format(username))
+            messages.success(request, 'Cadastrado de <strong> {} </strong> foi atualizado com Sucesso!'.format(username))
             return HttpResponseRedirect(reverse('lista_usu'))
 
     else:
@@ -87,7 +90,7 @@ def atualiza_usuario(request, pk):
 @login_required
 def delet_usuario(request, pk):
     """ Deleta Usuario do Sistema"""
-    template_name = 'deleta_usu.html'
+    template_name = 'user/deleta_usu.html'
     usuario = get_object_or_404(User, pk=pk)
     if request.method == "POST":
         usuario.delete()
@@ -105,7 +108,7 @@ def delet_usuario(request, pk):
 @staff_member_required(login_url="/sis/accounts/login/")
 def lista_grupos(request):
     """Lista os Grupos disponiveis"""
-    template_name = 'grupos.html'
+    template_name = 'grupos/grupos.html'
     form = Group.objects.all()
     context = {
         'form': form
@@ -116,7 +119,7 @@ def lista_grupos(request):
 @login_required
 def cadastro_grupo(request):
     """ Cadastra o Grupo"""
-    template_name = 'cadastro_grupo.html'
+    template_name = 'grupos/cadastro_grupo.html'
     if request.method == 'POST':
         form = RegisterGroup(request.POST or None)
         if form.is_valid():
@@ -135,7 +138,7 @@ def cadastro_grupo(request):
 @login_required
 def atualiza_grupo(request, pk):
     """ Edida o Groups"""
-    template_name = 'cadastro_grupo.html'
+    template_name = 'grupos/cadastro_grupo.html'
     grupo = get_object_or_404(Group, pk=pk)
 
     if request.method == 'POST':
@@ -157,7 +160,7 @@ def atualiza_grupo(request, pk):
 @login_required
 def delet_grupo(request, pk):
     """ Deleta Grupo do Sistema"""
-    template_name = 'deleta_grupo.html'
+    template_name = 'grupos/deleta_grupo.html'
     grupouser = get_object_or_404(Group, pk=pk)
     if request.method == "POST":
         grupouser.delete()

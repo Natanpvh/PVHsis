@@ -34,11 +34,12 @@ def home(request):
 @login_required
 def listar_post(request):
     """ Lista Posts """
-    template = 'posts.html'
+    template = 'posts/posts.html'
 
     if 'q' in request.GET != False:
         # SE for buscar
         if request.user.is_staff:
+            """Busca padão User is_staff"""
             post_busca = Post.objects.all().order_by('-id')
 
             busca = request.GET.get("q")
@@ -49,6 +50,7 @@ def listar_post(request):
             )
 
         else:
+            """Busca tipo User normal"""
             post_busca = Post.objects.filter(autor=request.user.id).order_by('-id')
 
             busca = request.GET.get("q")
@@ -107,7 +109,7 @@ def listar_post(request):
 @permission_required('post.usuario_post_add', raise_exception=True)
 def cadastrar_post(request):
     """ Cadastra o Post"""
-    template_name = 'post_form.html'
+    template_name = 'posts/post_form.html'
     nome_temp = 'Cadastrar'
     if request.method == 'POST':
         form = RegisterPostForm(request.POST or None)
@@ -128,7 +130,7 @@ def cadastrar_post(request):
 @permission_required('post.usuario_post_edit', raise_exception=True)
 def atualiza_post(request, pk):
     """ Edida o Post"""
-    template_name = 'post_form.html'
+    template_name = 'posts/post_form.html'
     nome_temp = 'Atualizar'
     post = get_object_or_404(Post, pk=pk)
     if request.method == 'POST':
@@ -136,7 +138,7 @@ def atualiza_post(request, pk):
         if form.is_valid():
             form.save()
             post_titulo = form.cleaned_data.get('titulo')
-            messages.success(request, 'O Post >> {} << foi atualizado com Sucesso!'.format(post_titulo))
+            messages.success(request, 'O Post <strong> {} </strong> foi atualizado com Sucesso!'.format(post_titulo))
             return HttpResponseRedirect(reverse('posts'))
 
     else:
@@ -152,7 +154,7 @@ def atualiza_post(request, pk):
 @permission_required('post.usuario_categoria_edit')
 def listar_categoria(request):
     """ Lista Posts """
-    template = 'categorias.html'
+    template = 'category/categorias.html'
     categoria = Categoria.objects.all()
     total_categoria = categoria.count()
 
@@ -167,7 +169,7 @@ def listar_categoria(request):
 @permission_required('post.usuario_categoria_add', raise_exception=True)
 def cadastrar_categoria(request):
     """ Cadastra Categoria"""
-    template_name = 'cadastrar_categoria.html'
+    template_name = 'category/cadastrar_categoria.html'
     if request.method == 'POST':
         form = RegisterCategoriaForm(request.POST or None)
         if form.is_valid():

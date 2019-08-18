@@ -20,7 +20,7 @@ from post import views
 urlpatterns = [
 
     # Dashboard do Sistema
-    path('', views.home, name='index'),
+    path('sis/', views.home, name='index'),
 
     # Posts
     path('sis/post/', views.listar_post, name='posts'),

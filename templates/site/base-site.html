@@ -1,0 +1,557 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Title -->
+  <title>NO SEGUNDO</title>
+
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../../favicon.ico">
+
+ 
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="{% static "css/style.css"%}">
+  <link rel="stylesheet" href="{% static "css/bootstrap.css"%}">
+
+ 
+</head>
+
+<body>
+    <!-- ======= HEADER =======-->
+    <header class="container-fluid">
+        <div class="row-reader">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 mr-auto mt-2 mt-lg-0">
+                            <!-- LOGO -->
+                            <a href="#">
+                               <img class="logo-1" src="./img/nosegundo.png">
+                            </a>
+                            <!-- FIM LOGO -->
+                        </div>
+                        <div class="col-md-3">
+                            <form class="box-search form-inline my-2 my-lg-0">
+                                <!-- Search form -->
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">                                    
+                                        <button class="input-group-text" type="submit"><i class="fas fa-search"></i></button>                                    
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Text input with checkbox">
+                                </div>
+                            </form>
+                        </div>
+                    </div>                    
+                </div>
+        </div>
+
+        <div class="box-row">
+                <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                        <nav class="navbar navbar-expand-lg navbar-light nav-p">
+                                <a class="navbar-brand" href="#">Navbar</a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+                                <span class="navbar-toggler-icon"></span>
+                                </button>
+                            
+                            <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+                                <ul class="navbar-nav mr-auto nav-border">
+                                    <li class="nav-item ">
+                                        <a class="nav-link" href="#">Home </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Política</a>
+                                    </li>                                
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="#">Negócios</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="#">Trabalho</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="#">Brasil</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="#">Mundo</a>
+                                    </li>
+                                    <li class="nav-item">
+                                            <a class="nav-link " href="#">Saúde</a>
+                                    </li>
+                                    <li class="nav-item">
+                                            <a class="nav-link " href="#">Entreterimento</a>
+                                    </li>
+                                </ul>                             
+                            </div>
+                        </nav>
+                </div>
+                <div class="col-md-3">
+                    <ul class="nav-midias">
+                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+     <!-- ======= FIM HEADER =======-->
+    <main class="container-fluid">
+    <!-- ====== DESTAQUES =========-->   
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mob-margin">
+                        <div class="card">
+                            <div class="card-body">                              
+                                <div class="box-destaque-noticia-1">
+                                    <a href="#" class="destaque">
+                                        <ul class="destaque-list">
+                                            <li class="categoria-d">Política</li>
+                                            <li class="titulo-d">Em depoimento, DJ preso pela PF diz que foi hackeado por Walter Delgatti e que desconhece fonte de renda dele</li>
+                                            <li class="resumo-d">Presidente também declarou apoio a Moro e disse que mensagens de autoridades tiradas por hackers não serão destruídas. </li>
+                                            <li class="imagem-d"><img src="./img/paisagem.jpg" alt=""></li>
+                                        </ul>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-6">    
+                    <a href="#" class="destaques-2">              
+                        <figure class="destaque-noticia-2 img-evento">                       
+                            <img src="./img/moto.jpg" alt="">
+                            <div class="categoria-figura">Jogo aberto</div>
+                                <figcaption>
+                                    <h2>Com dobradinha brasileira no triatlo, Luisa Baptista conquista o primeiro ouro do Brasil em Lima </h2>
+                                        <p class="description"> Titulo noticia</p>
+                                </figcaption>  
+                        </figure>
+                    </a> 
+                    <a href="#" class="destaques-2">    
+                        <figure class="destaque-noticia-2 img-evento">                           
+                            <img src="./img/moto.jpg" alt="">
+                            <div class="categoria-figura">Jogo aberto</div>
+                                <figcaption>
+                                        <h2>Com dobradinha brasileira no triatlo, Luisa Baptista conquista o primeiro ouro do Brasil em Lima </h2>
+                                        <p class="description"> Titulo noticia</p>
+                                </figcaption>  
+                        </figure>
+                    </a>
+                </div>
+            </div>
+        </div>
+    <!--  ====== FIM DESTAQUES ======-->   
+        <div class="container box-banner">
+                <div class="col-md-8 ml-md-auto container-banner-2">
+
+                </div>            
+        </div> 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="box-d">
+
+                            <div class="destaques row">                            
+                                    <div class="img-destque col-md-6">
+                                        <a href="#">
+                                            <picture>
+                                                    <img src="./img/img-not.jpg" alt="">
+                                            </picture>   
+                                        </a>                         
+                                    </div>
+                                    <div class="body-noticia-destaque col-md-6">
+                                        <div class="cat">Autoridades hackeadas</div>
+                                        <div class="titulo-des">
+                                            <a href="">
+                                                    Suspeito de ataque hacker tem histórico de estelionato e passagens pela polícia
+                                            </a>
+                                        </div>
+                                        <div class="res">Walter Delgatti já foi preso por tráfico de substâncias e usar carteira falsa de delegado.</div>
+                                    </div>
+                            
+                            </div>
+                            <div class="destaques row">                            
+                                    <div class="img-destque col-md-6">
+                                        <a href="#">
+                                            <picture>
+                                                    <img src="./img/img-not.jpg" alt="">
+                                            </picture>   
+                                        </a>                         
+                                    </div>
+                                    <div class="body-noticia-destaque col-md-6">
+                                        <div class="cat">Autoridades hackeadas</div>
+                                        <div class="titulo-des">
+                                            <a href="">
+                                                    Suspeito de ataque hacker tem histórico de estelionato e passagens pela polícia
+                                            </a>
+                                        </div>
+                                        <div class="res">Walter Delgatti já foi preso por tráfico de substâncias e usar carteira falsa de delegado.</div>
+                                    </div>
+                            
+                            </div>
+                            <div class="destaques row">                            
+                                    <div class="img-destque col-md-6">
+                                        <a href="#">
+                                            <picture>
+                                                    <img src="./img/img-not.jpg" alt="">
+                                            </picture>   
+                                        </a>                         
+                                    </div>
+                                    <div class="body-noticia-destaque col-md-6">
+                                        <div class="cat">Autoridades hackeadas</div>
+                                        <div class="titulo-des">
+                                            <a href="">
+                                                    Suspeito de ataque hacker tem histórico de estelionato e passagens pela polícia
+                                            </a>
+                                        </div>
+                                        <div class="res">Walter Delgatti já foi preso por tráfico de substâncias e usar carteira falsa de delegado.</div>
+                                    </div>
+                            
+                            </div>  
+                            <div class="destaques row">                            
+                                <div class="img-destque col-md-6">
+                                    <a href="#">
+                                        <picture>
+                                                <img src="./img/img-not.jpg" alt="">
+                                        </picture>   
+                                    </a>                         
+                                </div>
+                                <div class="body-noticia-destaque col-md-6">
+                                    <div class="cat">Autoridades hackeadas</div>
+                                    <div class="titulo-des">
+                                        <a href="">
+                                                Suspeito de ataque hacker tem histórico de estelionato e passagens pela polícia
+                                        </a>
+                                    </div>
+                                    <div class="res">Walter Delgatti já foi preso por tráfico de substâncias e usar carteira falsa de delegado.</div>
+                                </div>
+                        
+                        </div>  
+                        <div class="destaques row">                            
+                            <div class="img-destque col-md-6">
+                                <a href="#">
+                                    <picture>
+                                            <img src="./img/img-not.jpg" alt="">
+                                    </picture>   
+                                </a>                         
+                            </div>
+                            <div class="body-noticia-destaque col-md-6">
+                                <div class="cat">Autoridades hackeadas</div>
+                                <div class="titulo-des">
+                                    <a href="">
+                                            Suspeito de ataque hacker tem histórico de estelionato e passagens pela polícia
+                                    </a>
+                                </div>
+                                <div class="res">Walter Delgatti já foi preso por tráfico de substâncias e usar carteira falsa de delegado.</div>
+                            </div>
+                    
+                    </div>  
+                    <div class="destaques row">                            
+                        <div class="img-destque col-md-6">
+                            <a href="#">
+                                <picture>
+                                        <img src="./img/img-not.jpg" alt="">
+                                </picture>   
+                            </a>                         
+                        </div>
+                        <div class="body-noticia-destaque col-md-6">
+                            <div class="cat">Autoridades hackeadas</div>
+                            <div class="titulo-des">
+                                <a href="">
+                                        Suspeito de ataque hacker tem histórico de estelionato e passagens pela polícia
+                                </a>
+                            </div>
+                            <div class="res">Walter Delgatti já foi preso por tráfico de substâncias e usar carteira falsa de delegado.</div>
+                        </div> 
+                    </div>      
+                    <div class="destaques row">                            
+                            <div class="img-destque col-md-6">
+                                <a href="#">
+                                    <picture>
+                                            <img src="./img/img-not.jpg" alt="">
+                                    </picture>   
+                                </a>                         
+                            </div>
+                            <div class="body-noticia-destaque col-md-6">
+                                <div class="cat">Autoridades hackeadas</div>
+                                <div class="titulo-des">
+                                    <a href="">
+                                            Suspeito de ataque hacker tem histórico de estelionato e passagens pela polícia
+                                    </a>
+                                </div>
+                                <div class="res">Walter Delgatti já foi preso por tráfico de substâncias e usar carteira falsa de delegado.</div>
+                            </div> 
+                        </div> 
+                        <div class="destaques row">                            
+                                <div class="img-destque col-md-6">
+                                    <a href="#">
+                                        <picture>
+                                                <img src="./img/img-not.jpg" alt="">
+                                        </picture>   
+                                    </a>                         
+                                </div>
+                                <div class="body-noticia-destaque col-md-6">
+                                    <div class="cat">Autoridades hackeadas</div>
+                                    <div class="titulo-des">
+                                        <a href="">
+                                                Suspeito de ataque hacker tem histórico de estelionato e passagens pela polícia
+                                        </a>
+                                    </div>
+                                    <div class="res">Walter Delgatti já foi preso por tráfico de substâncias e usar carteira falsa de delegado.</div>
+                                </div> 
+                            </div> 
+                            <div class="destaques row">                            
+                                    <div class="img-destque col-md-6">
+                                        <a href="#">
+                                            <picture>
+                                                    <img src="./img/img-not.jpg" alt="">
+                                            </picture>   
+                                        </a>                         
+                                    </div>
+                                    <div class="body-noticia-destaque col-md-6">
+                                        <div class="cat">Autoridades hackeadas</div>
+                                        <div class="titulo-des">
+                                            <a href="">
+                                                    Suspeito de ataque hacker tem histórico de estelionato e passagens pela polícia
+                                            </a>
+                                        </div>
+                                        <div class="res">Walter Delgatti já foi preso por tráfico de substâncias e usar carteira falsa de delegado.</div>
+                                    </div> 
+                                </div> 
+                                <div class="destaques row">                            
+                                        <div class="img-destque col-md-6">
+                                            <a href="#">
+                                                <picture>
+                                                        <img src="./img/img-not.jpg" alt="">
+                                                </picture>   
+                                            </a>                         
+                                        </div>
+                                        <div class="body-noticia-destaque col-md-6">
+                                            <div class="cat">Autoridades hackeadas</div>
+                                            <div class="titulo-des">
+                                                <a href="">
+                                                        Suspeito de ataque hacker tem histórico de estelionato e passagens pela polícia
+                                                </a>
+                                            </div>
+                                            <div class="res">Walter Delgatti já foi preso por tráfico de substâncias e usar carteira falsa de delegado.</div>
+                                        </div> 
+                                    </div>                  
+                       
+                    </div>
+                    <div class="page-nav-not-destaques">
+                        <a href="#" class="btn btn-info col-md-12">Mais Notícias</a>
+                    </div>
+                    
+                </div>
+                <div class="col-md-4 widgets-right">
+                        <div class="card box-card box-card-margin">
+                            <div class="card-header">Economia</div>
+                                <div class="card-body">Content</div> 
+                            <div class="card-footer _a_link"><a href="#">Tuto sobre economia <span><i class="fas fa-angle-right"></i></span></a></div>
+                        </div>
+                        <div class="card box-card box-card-margin">
+                                <!-- Widget Previs&atilde;o de Tempo CPTEC/INPE --><iframe allowtransparency="true" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" src="https://www.cptec.inpe.br/widget/widget.php?p=238&w=h&c=748ccc&f=ffffff" height="200px" width="215px"></iframe><noscript>Previs&atilde;o de <a href="http://www.cptec.inpe.br/cidades/tempo/238">Porto Velho/RO</a> oferecido por <a href="http://www.cptec.inpe.br">CPTEC/INPE</a></noscript><!-- Widget Previs&atilde;o de Tempo CPTEC/INPE -->
+                        </div>
+                        <!--Publicidade 3 e 4-->
+                        <div class="card box-card box-card-margin color-box" >                               
+                            <div class="card-body">
+                                <p class="card-text">Banner 3 ----------------------</p>
+                            </div>
+                        </div>
+                        <div class="card box-card box-card-margin color-box" >                               
+                                <div class="card-body">
+                                    <p class="card-text">Banner 4 -------------------</p>
+                                </div>
+                        </div>
+                        <!--Fim Plublicidade 3 e 4-->
+                        <div class="card box-card box-card-margin">
+                                <div class="card-header title-card">Blogs e Colunas</div>
+                                    <div class="card-body">
+                                        <ul class="blog-colunas-destques">
+                                            <li>
+                                                <a href="#">
+                                                    <div class="row ">
+                                                            <div class="col-md-7">
+                                                               <div class="blog-autor">Natanael Silva</div>
+                                                               <div class="blog-titulo">Noticia da Hora em Porto Velho - Ro</div>
+                                                            </div>
+                                                            <div class="col-md-5"><img src="./img/avatar.jpg" class="rounded-circle" alt="Cinque Terre"></div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                    <a href="#">
+                                                        <div class="row ">
+                                                                <div class="col-md-7">
+                                                                   <div class="blog-autor">Natanael Silva</div>
+                                                                   <div class="blog-titulo">Noticia da Hora em Porto Velho - Ro</div>
+                                                                </div>
+                                                                <div class="col-md-5"><img src="./img/avatar.jpg" class="rounded-circle" alt="Cinque Terre"></div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <div class="row ">
+                                                                <div class="col-md-7">
+                                                                    <div class="blog-autor">Natanael Silva</div>
+                                                                    <div class="blog-titulo">Noticia da Hora em Porto Velho - Ro</div>
+                                                                </div>
+                                                                <div class="col-md-5"><img src="./img/avatar.jpg" class="rounded-circle" alt="Cinque Terre"></div>
+                                                        </div>
+                                                    </a>
+                                                </li>                                           
+
+                                        </ul> 
+
+                                    </div> 
+                        </div>
+                        <!--Publicidade 5-->
+                        <div class="card box-card box-card-margin color-box" >                               
+                            <div class="card-body">
+                                <p class="card-text">Banner 5 -------------------</p>
+                            </div>
+                        </div>
+                        <!--Fim Publicidade 5-->
+                        <div class="card box-card box-card-margin">
+                            <div class="card-header">Curiosidades</div>
+                                <div class="card-body">Content</div> 
+                            <div class="card-footer _a_link"><a href="#">Mais de Destaques <span><i class="fas fa-angle-down"></i></span></a></div>
+                        </div>
+                        <!--Publicidade 6-->
+                        <div class="card box-card box-card-margin color-box" >                               
+                            <div class="card-body">
+                                <p class="card-text">Banner 6 -------------------</p>
+                            </div>
+                        </div>
+                        <!--Fim Publicidade 6-->
+                        <div class="card box-card box-card-margin">
+                            <div class="card-header title-card">Curiosidades</div>
+                                <div class="card-body">
+                                    <ul class="blog-colunas-destques">
+                                        <li>
+                                            <a href="#">
+                                                <div class="row ">
+                                                        <div class="col-md-7">
+                                                           <div class="blog-autor">Menos Poluição</div>
+                                                           <div class="blog-titulo">Noticia da Hora em Porto Velho - Ro</div>
+                                                        </div>
+                                                        <div class="col-md-5"><img src="./img/brasil.jpg"  alt="Cinque Terre"></div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="row ">
+                                                        <div class="col-md-7">
+                                                           <div class="blog-autor">Menos Poluição</div>
+                                                           <div class="blog-titulo">Noticia da Hora em Porto Velho - Ro</div>
+                                                        </div>
+                                                        <div class="col-md-5"><img src="./img/brasil.jpg"  alt="Cinque Terre"></div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="row ">
+                                                        <div class="col-md-7">
+                                                           <div class="blog-autor">Menos Poluição</div>
+                                                           <div class="blog-titulo">Noticia da Hora em Porto Velho - Ro</div>
+                                                        </div>
+                                                        <div class="col-md-5"><img src="./img/brasil.jpg"  alt="Cinque Terre"></div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        
+                                                                                 
+
+                                    </ul> 
+
+                                </div> 
+                        </div>
+                         <!--Publicidade 7-->
+                         <div class="card box-card box-card-margin color-box" >                               
+                            <div class="card-body">
+                                <p class="card-text">Banner 7 -------------------</p>
+                            </div>
+                        </div>
+                        <!--Fim Publicidade 7-->
+                        <div class="card box-card box-card-margin">
+                            <div class="card-header title-card">Bem Estar</div>
+                                <div class="card-body">
+                                    <ul class="blog-colunas-destques">
+                                        <li>
+                                            <a href="#">
+                                                <div class="row ">
+                                                        <div class="col-md-7">
+                                                           <div class="blog-autor">Menos Poluição</div>
+                                                           <div class="blog-titulo">Noticia da Hora em Porto Velho - Ro</div>
+                                                        </div>
+                                                        <div class="col-md-5"><img src="./img/frutas.jpg"  alt="Cinque Terre"></div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <div class="row ">
+                                                        <div class="col-md-7">
+                                                           <div class="blog-autor">Menos Poluição</div>
+                                                           <div class="blog-titulo">Noticia da Hora em Porto Velho - Ro</div>
+                                                        </div>
+                                                        <div class="col-md-5"><img src="./img/frutas-2.jpg"  alt="Cinque Terre"></div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        
+                                    </ul> 
+
+                                </div> 
+                        </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+     <!--Publicidade 8-->
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 ml-md-auto container-banner-2">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+     <!--Fim Publicidade 8-->
+    <footer class="container-fluid footer-box">
+      
+            <div class="row row-footer">
+                <div class="col-auto mr-auto">
+                        <address class="address-info">
+                           <a href="http://#" class="logo-footer"><img src="./img/nosegundo.png" alt=""></a> 
+                 
+                            Porto Velho - Rondônia CNPJ:000/0001/240  <a href="mailto:nosegundo@gmail.com">Redação: nosegundo@gmail.com </a>
+                        </address> 
+                </div>
+                <div class="col-auto">
+                    <a href="mailto:nosegundo.comercial@gmail.com" class="email-comercial">Anuncie Conosco: nosegundo.comercial@gmail.com</a>
+                </div>
+          
+        </div>
+
+    </footer>
+    
+     <script src="{% static "js/jquery-3.4.1.js"%}"></script>
+     <script src="{% static "js/bootstrap.min.js"%}"></script>
+
+</body>
+</html>
